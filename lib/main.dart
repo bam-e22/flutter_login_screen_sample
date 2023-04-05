@@ -137,12 +137,11 @@ class LoginForm extends StatelessWidget {
             const SizedBox(
               height: 36,
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: FilledButton(
-                    onPressed: (viewModel.id.isNotEmpty &&
-                            viewModel.password.isNotEmpty)
+            FractionallySizedBox(
+              widthFactor: 1,
+              child: FilledButton(
+                onPressed:
+                    (viewModel.id.isNotEmpty && viewModel.password.isNotEmpty)
                         ? () async {
                             // showLoginDialog(context, await viewModel.login());
 
@@ -152,14 +151,12 @@ class LoginForm extends StatelessWidget {
                             }
                           }
                         : null,
-                    child: (viewModel.inProgress)
-                        ? const CircularProgressIndicator(
-                            color: Colors.white,
-                          )
-                        : const Text("Login"),
-                  ),
-                ),
-              ],
+                child: (viewModel.inProgress)
+                    ? const CircularProgressIndicator(
+                        color: Colors.white,
+                      )
+                    : const Text("Login"),
+              ),
             ),
             const Spacer(),
             FilledButton(
